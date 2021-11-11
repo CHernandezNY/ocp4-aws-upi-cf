@@ -21,7 +21,7 @@ I am using <FirstInitialLastname>-<ObjectName> as the naming convention for this
   ---
   **TIP**
   You can download the README.md and do a 'find and replace' to update the commands:
-  * Replace cherandez with your name 
+  * Replace cherandez with your name or environment name (ex.: dev, prod)
   * Replace c.hernandez@example.com with your email
   ---
 
