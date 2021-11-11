@@ -15,8 +15,8 @@ I am working with OpenShift version 4.9 in AWS. The CloudFormation template YAML
 These steps were tested on both WSL Ubuntu 20.04 and a Ubuntu 18.04 VM.  
 You will need to have the AWS cli tool installed and the AWS credentials updated.  
 There is a base domain created on AWS Route53 to use: example.com  
-I am using <FirstInitialLastname>-<ObjectName> as the naming convention for this project:  
-    example: chernandez-vpc 
+I am using \<FirstInitialLastname\>-\<ObjectName\> as the naming convention for this project:  
+     example: chernandez-vpc 
 
   ---
   **TIP**
@@ -634,6 +634,8 @@ clustersecurity-MasterInstanceProfile-XXXXX
 
 ## 11. Creating the worker nodes in AWS
 
+### 11.1 Input Variables for Worker Node Cloudformation Template
+
 * InfrastructureName: (already filled)
 * RhcosAmi: (already filled)
 * Subnet: (already filled)
@@ -689,6 +691,8 @@ clustersecurity-WorkerInstanceProfile-XXXXX
 # sed -i -e "s@workercert@$workercert@g" *.json
 ```
 
+### 11.2 Executing the worker machines in AWS
+
 ```
 # aws cloudformation create-stack --stack-name chernandez-clusterworker1 --template-body file://06_cluster_worker_node.yaml --parameters file://06_cluster_worker_node.json --capabilities CAPABILITY_NAMED_IAM --tags Key="Owner",Value="c.hernandez@example.com"
 
@@ -706,9 +710,15 @@ clustersecurity-WorkerInstanceProfile-XXXXX
 
 **IMPORTANT STEP:**
 
-You must watch if the csrs are aprroved, if not you must approve them with the next command:
+In order to access your cluster, oc/kubectl use a configuration file. 
 ```
 # export KUBECONFIG="~/upi_ocp4_aws/auth/kubeconfig"  
+# oc get nodes
+```
+If worker nodes do not come up after ~20 minutes check for pending CSR. You must watch if the csrs are aprroved, if not you must approve them with the next command:
+```
+# watch oc get csr  
+
 # oc get csr -o name | xargs oc adm certificate approve  
 ```
 Wait for the installation complete.
