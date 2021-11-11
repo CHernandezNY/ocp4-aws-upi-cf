@@ -9,7 +9,7 @@
   },
   {
     "ParameterKey": "Subnet", 
-    "ParameterValue": "master1subnet" 
+    "ParameterValue": "master2subnet" 
   },
   {
     "ParameterKey": "WorkerSecurityGroupId", 
