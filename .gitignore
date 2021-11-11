@@ -1,0 +1,19 @@
+#Local install-config.yaml files
+install-config.yaml
+install-config.yaml.*
+
+#Local install directories
+manifests/
+openshift/
+auth/
+
+#Local install files
+*.log
+*.ign
+
+#Local JSON configs
+*.json
+ocp4-cf-files/*.json
+
+#Local Pull Secret file
+pull-secret.txt
