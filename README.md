@@ -708,11 +708,8 @@ clustersecurity-WorkerInstanceProfile-XXXXX
 
 You must watch if the csrs are aprroved, if not you must approve them with the next command:
 ```
-# export KUBECONFIG="~/upi_ocp4_aws/auth/kubeconfig"
-# csr=$(oc get csr | grep "Pending")
-# if $csr oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
-or
-# oc get csr -o name | xargs oc adm certificate approve
+# export KUBECONFIG="~/upi_ocp4_aws/auth/kubeconfig"  
+# oc get csr -o name | xargs oc adm certificate approve  
 ```
 Wait for the installation complete.
 ```
