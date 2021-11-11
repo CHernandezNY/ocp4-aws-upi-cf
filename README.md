@@ -1,4 +1,4 @@
-# AWS OpenShift 4.x UPI Install via Cloudformation - DRAFT
+# AWS OpenShift 4.x UPI Install via Cloudformation  
 
 ## 1. Overview 
 The steps in this guide for preforming a UPI-based installation are outlined here: [Official Installing of OpenShift4 on AWS](https://docs.openshift.com/container-platform/4.9/installing/installing_aws/installing-aws-user-infra.html).
