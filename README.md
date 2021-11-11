@@ -15,7 +15,7 @@ I am working with OpenShift version 4.9 in AWS. The CloudFormation template YAML
 These steps were tested on both WSL Ubuntu 20.04 and a Ubuntu 18.04 VM.  
 You will need to have the AWS cli tool installed and the AWS credentials updated.  
 There is a base domain created on AWS Route53 to use: example.com  
-I am using <FirstInitialLastname>-<ObjectName> as the naming convention for this project:   
+I am using <FirstInitialLastname>-<ObjectName> as the naming convention for this project:  
     example: chernandez-vpc 
 
   ---
