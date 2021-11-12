@@ -585,7 +585,7 @@ api-int.chernandez-ocp4.aa37.sandbox675.opentlc.com
 * CertificateAuthorities
 
 ```
-#  mastercert=$(cat ../upi_ocp4_aws/master.ign | jq -r .ignition.security.tls.certificateAuthorities[].source)
+#  mastercert=$(cat ./master.ign | jq -r .ignition.security.tls.certificateAuthorities[].source)
 ```
 
 ```
@@ -684,7 +684,7 @@ clustersecurity-WorkerInstanceProfile-XXXXX
 * CertificateAuthorities
 
 ```
-# workercert=$(cat ../upi_ocp4_aws/worker.ign | jq -r .ignition.security.tls.certificateAuthorities[].source)
+# workercert=$(cat ./worker.ign | jq -r .ignition.security.tls.certificateAuthorities[].source)
 ```
 
 ```
