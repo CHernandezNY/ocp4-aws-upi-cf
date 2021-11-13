@@ -5,7 +5,9 @@ The steps in this guide for preforming a UPI-based installation are outlined her
 The work here is based on GitHub user Roberto Carratalá's project: https://github.com/rcarrata/ocp4-aws-upi-cf  
 Several Cloudformation templates and parameters files are provided to assist in completing these steps. The CloudFormation templates are just an example to help model your own.
 
-I am working with OpenShift version 4.9 in AWS. The CloudFormation template YAMLs are based on that version.  To deploy a different version of OpenShift copy the template from the CloudFormation template from the desired version and save it as a YAML file on your computer. 
+I am working with OpenShift version 4.9 in AWS. The CloudFormation template YAMLs are based on that version.  To deploy a different version of OpenShift copy the template from the CloudFormation template of the desired version and save it as a YAML file on your computer. You will need to use the OpenShift Installer for that version as well.  
+
+[OpenShift Client and Installer Download](https://access.redhat.com/downloads/content/290/)
 
 * [OpenShift 4.8 for AWS](https://docs.openshift.com/container-platform/4.8/installing/installing_aws/installing-aws-user-infra.html)
 * [OpenShift 4.7 for AWS](https://docs.openshift.com/container-platform/4.7/installing/installing_aws/installing-aws-user-infra.html)
@@ -25,8 +27,6 @@ I am using \<FirstInitialLastname\>-\<ObjectName\> as the naming convention for 
   * Replace c.hernandez@example.com with your email
   ---
 
-
-
 ## 2. Retrieve the OpenShift Install and Generate the Install files
 
 ### 2.1 Download openshift-install binary
@@ -45,8 +45,6 @@ or
 curl  https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/$openshift_cli --output $openshift_cli
 sudo tar -xvzf $openshift_cli -C /usr/local/bin/
 ```
-
-
 
 ## 3. Creating the installation files for AWS
 
